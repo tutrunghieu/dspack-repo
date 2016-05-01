@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="dspack-zendy-101">
+        <wb-resource deploy-path="/" source-path="/src-apr30-util"/>
         <wb-resource deploy-path="/" source-path="/src-apr29-jsondb"/>
+        <wb-resource deploy-path="/" source-path="/src/test/java"/>
     </wb-module>
 </project-modules>
