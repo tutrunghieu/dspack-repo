@@ -7,6 +7,9 @@ import ds.writers.html.HtmlWriter;
 
 public class test1_sequence {
 
+	private static int n = 1000;
+	private static double s = 100;
+	
 	public static void main(String[] args) throws Exception
 	{
 		Host h = new Host();
@@ -16,12 +19,12 @@ public class test1_sequence {
 		Player p4 = new Player(9000);
 		
 		File f = Explorer.getDesktop().get("out1.html");
-		startSimulation(1000, f, h, p1, p2, p3, p4);
+		startSimulation(f, h, p1, p2, p3, p4);
 
 		Explorer.show(f);
 	}
 
-	private static void startSimulation(int n, File f, Host h, Player... p) throws Exception
+	private static void startSimulation(File f, Host h, Player... p) throws Exception
 	{
 		HtmlWriter out = new HtmlWriter(f);
 		
@@ -47,16 +50,16 @@ public class test1_sequence {
 				if(p[j].qualifiedForNextMove())
 				{
 					String vj = p[j].nextMove();
-					if(vj.equals(hk)) p[j].modify(10);
-					else p[j].modify(-10);
+					if(vj.equals(hk)) p[j].modify(s);
+					else p[j].modify(-s);
 					
 					out.td(vj);
 					out.td(p[j].getBalance());
 				}
 				
 				else {
-					out.td("&nbsp;"); 
-					out.td("&nbsp;"); 
+					out.td(" --- "); 
+					out.td(" --- "); 
 					}
 			}
 			
